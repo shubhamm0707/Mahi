@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vh: 1vh;
+    --vw: 1vw;
+    --primary-text-color: #005380;
+}
+
+@font-face {
+    font-family: 'Maven Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Maven Pro Regular'), url('fonts/MavenPro-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Maven Pro Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Maven Pro Medium'), url('fonts/MavenPro-Medium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Maven Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Maven Pro Bold'), url('fonts/MavenPro-Bold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Maven Pro Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Maven Pro Black'), url('fonts/MavenPro-Black.woff') format('woff');
+}
+
+.container {
+    padding: calc(2 * var(--vh));
+    padding-inline: calc(3 * var(--vw));
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.primary-btn {
+    background: transparent;
+    /* No background */
+    color: white;
+    /* White text */
+    border: 1px solid white;
+    /* White border */
+    padding: calc(1 * var(--vw)) calc(3 * var(--vw));
+    /* Space inside button */
+    font-size: calc(0.8 * var(--vw));
+    /* Make text capital */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin-right: calc(1 * var(--vw));
+    border-radius: calc(2 * var(--vw));
+    border-top-right-radius: 0px;
+    font-family: 'Maven Pro Medium';
+    font-weight: normal
+}
+
+.primary-btn:hover {
+    background: white;
+    color: #004080;
+    /* Dark blue text on hover */
+}
+
+
+.sec-btn {
+    background: var(--primary-text-color);
+    /* No background */
+    color: white;
+    /* White text */
+    border: 1px solid var(--primary-text-color);
+    /* White border */
+    padding: calc(1 * var(--vw)) calc(3 * var(--vw));
+    /* Space inside button */
+    font-size: calc(0.8 * var(--vw));
+    /* Make text capital */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin-right: calc(1 * var(--vw));
+    border-radius: calc(2 * var(--vw));
+    border-top-right-radius: 0px;
+    font-family: 'Maven Pro Medium';
+    font-weight: normal
+}
+
+.sec-btn:hover {
+    background: white;
+    color: #004080;
+    /* Dark blue text on hover */
+}
+
+/* Header Section */
+
+header {
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    transition: 0.6s;
+}
+
+header.sticky {
+    background: var(--primary-text-color);
+}
+
+
+.header-container {
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700px;
+    text-decoration: none;
+    font-size: calc(2 * var(--vw));
+    color: #ffffff;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+
+header ul {
+    justify-content: center;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    margin: 0px calc(1.5 * var(--vw));
+    font-size: calc(0.9 * var(--vw));
+    color: white;
+    letter-spacing: .1vw;
+    font-weight: 500px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* The reason the .banner starts from the top and not below the header is due to the position: fixed; property applied to the header. 
+When an element is fixed, it is positioned relative to the viewport, 
+and it does not affect the layout of other elements on the page. This means that the .banner element, which is positioned relatively, 
+will start immediately after the top of the page, effectively appearing behind the fixed header. */
+.banner {
+    position: relative;
+    width: 100%;
+    height: calc(60 * var(--vh));
+    background-image: url('assets/headerbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    /* Moves the image upwards */
+}
+
+/* Optional: Add a dark overlay to improve text visibility */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(60 * var(--vh));
+    /* background: rgba(0, 63, 98, .7); */
+    background: color-mix(in srgb, var(--primary-text-color) 50%, transparent);
+
+    /* Dark overlay */
+    z-index: -1;
+}
+
+.title {
+    position: relative;
+    z-index: 1000;
+    padding-top: calc(10 * var(--vh));
+}
+
+.banner-subheading {
+    font-size: calc(1 * var(--vw));
+    color: white;
+    font-weight: 500;
+    font-family: 'Maven Pro Medium';
+}
+
+.banner-heading {
+    margin-top: calc(2 * var(--vh));
+    font-size: calc(1.8 * var(--vw));
+    color: white;
+    font-weight: 500;
+    font-family: 'Maven Pro Medium';
+}
+
+.banner-rhym {
+    margin-top: calc(2 * var(--vh));
+
+    font-size: calc(1 * var(--vw));
+    color: white;
+    font-weight: 500;
+    font-family: 'Maven Pro Medium';
+}
+
+
+
+/* Expertise */
+
+.expertise {
+    width: 100%;
+    height: calc(50 * var(--vh));
+    background-color: rgba(114, 113, 113, 0.104);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.expertise-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.expertise-left h2 {
+    font-size: calc(2.2 * var(--vw));
+    margin-bottom: calc(2 * var(--vh));
+}
+
+
+.exp-img-div {
+    width: 30%;
+    height: 60%;
+    background-image: url('https://trilegal.com/wp-content/themes/trilegal/assets/images/home-banner.jpg?no-cache=4');
+    background-size: cover;
+    border-radius: 10px;
+
+}
+
+.about {
+    justify-content: center;
+    margin-top: calc(2 * var(--vh));
+    margin-bottom: calc(2 * var(--vh));
+}
+
+.about h1 {
+    font-size: calc(2.4 * var(--vw));
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: calc(40 * var(--vh));
+    background: linear-gradient(to right, var(--primary-text-color), #011223);
+    border-radius: 125px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-content {
+    font-size: 30px;
+    color: white;
+}
+
+
+
+@media (max-width: 1000px) {
+    :root {
+        --vw: 1.5vw;
+        /* Adjust the value as needed for smaller screens */
+    }
+}
