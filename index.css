@@ -308,3 +308,87 @@ footer {
         /* Adjust the value as needed for smaller screens */
     }
 }
+
+
+/* Article */
+
+
+.article {
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.upper {
+    width: 100%;
+    height: 40vh;
+    background-color: aquamarine;
+}
+
+.bottom {
+    width: 100%;
+    height: 10vh;
+    background-color: red;
+}
+
+/*  */
+
+.card {
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    border-left: 5px solid orange;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    /* Ensures the image fills the width */
+    object-fit: contain;
+}
+
+.content {
+    flex: 1;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.author {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tags {
+    font-size: 12px;
+    color: gray;
+}
+
+.tags span {
+    color: orange;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: gray;
+    margin-top: 10px;
+}

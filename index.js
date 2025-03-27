@@ -8,33 +8,25 @@ window.addEventListener("scroll", function () {
 });
 
 
-// document.getElementById("agreeBtn").addEventListener("click", function () {
-//     document.getElementById("disclaimer").style.display = "none";
-// });
+const colorThemes = [
+    { bg: "orange", title: "#721c24", tag: "#d9534f" },
+    { bg: "#7070df", title: "#0c5460", tag: "#5bc0de" },
+    { bg: "#5eaf5e", title: "#155724", tag: "#28a745" }
+];
 
+document.querySelectorAll(".card").forEach((card, index) => {
+    const theme = colorThemes[index % colorThemes.length];
+    card.style.borderLeft = `5px solid ${theme.bg}`;
+});
 
-
-// const text = "Business Law & Compliance";
-// const dynamicElement = document.querySelector(".dynamic");
-// let index = 0;
-// let deleting = false;
-
-// function typeEffect() {
-//     if (!deleting) {
-//         dynamicElement.textContent = text.substring(0, index++);
-//         if (index > text.length) {
-//             deleting = true;
-//             setTimeout(typeEffect, 1000); // Pause before deleting
-//             return;
-//         }
-//     } else {
-//         dynamicElement.textContent = text.substring(0, index--);
-//         if (index === 0) {
-//             deleting = false;
-//         }
-//     }
-
-//     setTimeout(typeEffect, deleting ? 50 : 100); // Adjust speed for typing and deleting
-// }
-
-// typeEffect();
+let idx = 0;
+let toChange = 2;
+document.querySelectorAll(".tags span").forEach((tag, index) => {
+    toChange--;
+    const theme = colorThemes[idx % colorThemes.length];
+    tag.style.color = theme.tag;
+    if (toChange == 0) {
+        toChange = 2;
+        idx++;
+    }
+});
