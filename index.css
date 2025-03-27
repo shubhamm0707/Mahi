@@ -7,7 +7,7 @@
 :root {
     --vh: 1vh;
     --vw: 1vw;
-    --primary-text-color: #005380;
+    --primary-text-color: #004080;
 }
 
 @font-face {
@@ -109,7 +109,7 @@ a {
 
 .sec-btn:hover {
     background: white;
-    color: #004080;
+    color: var(--primary-text-color);
     /* Dark blue text on hover */
 }
 
@@ -143,6 +143,7 @@ header.sticky {
 
 header ul {
     justify-content: center;
+    gap: calc(2 * var(--vw));
 }
 
 header ul li {
@@ -150,7 +151,7 @@ header ul li {
 }
 
 header ul li a {
-    margin: 0px calc(1.5 * var(--vw));
+    /* margin: 0px calc(1.5 * var(--vw)); */
     font-size: calc(0.9 * var(--vw));
     color: white;
     letter-spacing: .1vw;
