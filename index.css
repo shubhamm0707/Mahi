@@ -276,6 +276,7 @@ will start immediately after the top of the page, effectively appearing behind t
 }
 
 .about h1 {
+    color: var(--primary-text-color);
     font-size: calc(2.4 * var(--vw));
 }
 
